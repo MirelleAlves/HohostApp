@@ -1,4 +1,4 @@
-CREATE TABLE acomodacoes (
+CREATE TABLE Acomodacoes (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     descricao TEXT,
@@ -17,7 +17,7 @@ CREATE TABLE acomodacoes (
 );
 
 CREATE TABLE Anfitrioes (
-     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(20),
     email VARCHAR(100),
