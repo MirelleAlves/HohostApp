@@ -15,3 +15,12 @@ CREATE TABLE acomodacoes (
     animais_permitidos BOOLEAN,
     disponivel BOOLEAN
 );
+
+CREATE TABLE Anfitrioes (
+     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20),
+    email VARCHAR(100),
+    estado VARCHAR(50),
+    cidade_atuacao VARCHAR(100)
+);
