@@ -21,6 +21,6 @@ Principais módulos/funções do projeto:
 O sistema será implementado com Java 21, Spring Boot 3, JPA e exposto via API RESTful.
 
 ## 👥 Integrantes
-- Mirelle dos Santos Alves 
-- Nome 2 
-- Nome 3
+- Carlos
+- Gilberto
+- Mirelle dos Santos Alves

@@ -9,19 +9,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Anfitriao {
+public class Cliente {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
     private String nome;
     private String telefone;
     private String email;
-    private String estado;
-    private String cidadeAtuacao;
+    private String cpf;
 
-    @OneToMany(mappedBy = "anfitriao")
-    private List<Acomodacao> acomodacoes;
+    @OneToMany(mappedBy = "cliente")
+    private List<Reserva> reservas;
 
-     public Anfitriao() {
+     public Cliente() {
     }
 
     public Long getId() {
@@ -56,19 +55,12 @@ public class Anfitriao {
         this.email = email;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getCidadeAtuacao() {
-        return cidadeAtuacao;
-    }
-
-    public void setCidadeAtuacao(String cidadeAtuacao) {
-        this.cidadeAtuacao = cidadeAtuacao;
-    }
 }
