@@ -30,6 +30,10 @@ public class Acomodacao {
     @JoinColumn(name = "anfitriao_id")
     private Anfitriao anfitriao;
 
+    @ManyToOne
+    @JoinColumn(name = "reserva_id")
+    private Reserva reserva;
+
     public Acomodacao() {
     }
 

@@ -13,7 +13,8 @@ CREATE TABLE acomodacao (
     wifi BOOLEAN,
     estacionamento BOOLEAN,
     animais_permitidos BOOLEAN,
-    disponivel BOOLEAN
+    disponivel BOOLEAN,
+    FOREIGN KEY (anfitriao_id) REFERENCES anfitriao(id)
 );
 
 CREATE TABLE anfitriao (

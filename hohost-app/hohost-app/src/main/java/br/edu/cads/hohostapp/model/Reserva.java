@@ -1,11 +1,10 @@
 package br.edu.cads.hohostapp.model;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -16,21 +15,33 @@ public class Reserva {
     private String dataSaida;
     private String formaPagamento;
     public enum StatusReserva {
-        PENDENTE,        // Reserva criada, aguardando confirmação
-        CONFIRMADA,      // Reserva confirmada pelo anfitrião ou sistema
-        REJEITADA,       // Anfitrião recusou a reserva
-        CANCELADA,       // Cliente ou anfitrião cancelou
-        CHECK_IN,        // Cliente realizou o check-in
-        CHECK_OUT,       // Cliente finalizou a estadia
-        NAO_APARECEU,    
-        CONCLUIDA        
+        PENDENTE (1),        // Reserva criada, aguardando confirmação
+        CONFIRMADA (2),      // Reserva confirmada pelo anfitrião ou sistema
+        REJEITADA (3),       // Anfitrião recusou a reserva
+        CANCELADA (4),       // Cliente ou anfitrião cancelou
+        CHECK_IN (5),        // Cliente realizou o check-in
+        CHECK_OUT (6),       // Cliente finalizou a estadia
+        NAO_APARECEU (7),    
+        CONCLUIDA (8);
+
+        public int status;
+
+        StatusReserva(int status) {
+            this.status = status;
+        }        
     }
 
     @ManyToOne
+    @JoinColumn(name = "clente_id")
     private Cliente cliente;
 
     @ManyToOne
+    @JoinColumn(name = "acomodacao_id")
     private Acomodacao acomodacao;
+
+    @ManyToOne
+    @JoinColumn(name = "anfitriao_id")
+    private Anfitriao anfitriao;
 
     public Reserva() {
     }

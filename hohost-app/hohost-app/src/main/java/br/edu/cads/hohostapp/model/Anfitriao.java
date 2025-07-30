@@ -21,6 +21,9 @@ public class Anfitriao {
     @OneToMany(mappedBy = "anfitriao")
     private List<Acomodacao> acomodacoes;
 
+    @OneToMany(mappedBy = "anfitriao")
+    private List<Reserva> reservas;
+
      public Anfitriao() {
     }
 
