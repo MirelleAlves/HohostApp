@@ -157,4 +157,12 @@ public class Acomodacao {
         this.disponivel = disponivel;
     }
 
+    public Anfitriao getAnfitriao() {
+        return anfitriao;
+    }
+
+    public void setAnfitriao(Anfitriao anfitriao) {
+       this.anfitriao = anfitriao;
+    }
+
 }
