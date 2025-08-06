@@ -47,30 +47,10 @@ public class AcomodacaoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Acomodacao> atualizar(@PathVariable Long id, @RequestBody Acomodacao atualizacaoAcomodacao) {
-        Optional<Acomodacao> existente = service.buscarPorId(id);
-
-        if (existente.isPresent()) {
-            Acomodacao acomodacao = existente.get();
-            acomodacao.setTitulo(atualizacaoAcomodacao.getTitulo());
-            acomodacao.setDescricao(atualizacaoAcomodacao.getDescricao());
-            acomodacao.setEndereco(atualizacaoAcomodacao.getEndereco());
-            acomodacao.setCidade(atualizacaoAcomodacao.getCidade());
-            acomodacao.setEstado(atualizacaoAcomodacao.getEstado());
-            acomodacao.setTipo(atualizacaoAcomodacao.getTipo());
-            acomodacao.setPrecoPorNoite(atualizacaoAcomodacao.getPrecoPorNoite());
-            acomodacao.setQuantidadeQuartos(atualizacaoAcomodacao.getQuantidadeQuartos());
-            acomodacao.setQuantidadeBanheiros(atualizacaoAcomodacao.getQuantidadeBanheiros());
-            acomodacao.setCapacidade(atualizacaoAcomodacao.getCapacidade());
-            acomodacao.setWifi(atualizacaoAcomodacao.getWifi());
-            acomodacao.setEstacionamento(atualizacaoAcomodacao.getEstacionamento());
-            acomodacao.setAnimaisPermitidos(atualizacaoAcomodacao.getAnimaisPermitidos());
-            acomodacao.setDisponivel(atualizacaoAcomodacao.getDisponivel());
-
-            Acomodacao atualizada = service.salvar(acomodacao);
-            return ResponseEntity.ok(atualizada);
-        }
-
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<Acomodacao> atualizar(@PathVariable Long id, @RequestBody Acomodacao dadosAtualizados) {
+        Optional<Acomodacao> atualizada = service.atualizar(id, dadosAtualizados);
+        return atualizada.map(ResponseEntity::ok)
+                     .orElse(ResponseEntity.notFound().build());
     }
+    
 }

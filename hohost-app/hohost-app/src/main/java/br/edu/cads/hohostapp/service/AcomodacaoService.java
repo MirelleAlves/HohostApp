@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import br.edu.cads.hohostapp.model.Acomodacao;
 import br.edu.cads.hohostapp.repository.AcomodacaoRepository;
@@ -28,6 +31,35 @@ public class AcomodacaoService {
 
     public void deletar(Long id) {
         repository.deleteById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Optional<Acomodacao> atualizar(@PathVariable Long id, @RequestBody Acomodacao atualizacaoAcomodacao) {
+        Optional<Acomodacao> existente = repository.findById(id);
+
+        if (existente.isPresent()) {
+            Acomodacao acomodacao = existente.get();
+            acomodacao.setTitulo(atualizacaoAcomodacao.getTitulo());
+            acomodacao.setDescricao(atualizacaoAcomodacao.getDescricao());
+            acomodacao.setEndereco(atualizacaoAcomodacao.getEndereco());
+            acomodacao.setCidade(atualizacaoAcomodacao.getCidade());
+            acomodacao.setEstado(atualizacaoAcomodacao.getEstado());
+            acomodacao.setTipo(atualizacaoAcomodacao.getTipo());
+            acomodacao.setPrecoPorNoite(atualizacaoAcomodacao.getPrecoPorNoite());
+            acomodacao.setQuantidadeQuartos(atualizacaoAcomodacao.getQuantidadeQuartos());
+            acomodacao.setQuantidadeBanheiros(atualizacaoAcomodacao.getQuantidadeBanheiros());
+            acomodacao.setCapacidade(atualizacaoAcomodacao.getCapacidade());
+            acomodacao.setWifi(atualizacaoAcomodacao.getWifi());
+            acomodacao.setEstacionamento(atualizacaoAcomodacao.getEstacionamento());
+            acomodacao.setAnimaisPermitidos(atualizacaoAcomodacao.getAnimaisPermitidos());
+            acomodacao.setDisponivel(atualizacaoAcomodacao.getDisponivel());
+            acomodacao.setAnfitriao(atualizacaoAcomodacao.getAnfitriao());
+            acomodacao.setReserva(atualizacaoAcomodacao.getReserva());
+
+            return Optional.of(repository.save(acomodacao));
+        }
+
+        return Optional.empty();
     }
 
 }

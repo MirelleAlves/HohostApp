@@ -57,6 +57,7 @@ public class AnfitriaoController {
             anfitriao.setEmail(dadosAtualizados.getEmail());
             anfitriao.setEstado(dadosAtualizados.getEstado());
             anfitriao.setCidadeAtuacao(dadosAtualizados.getCidadeAtuacao());
+            
             return ResponseEntity.ok(service.salvar(anfitriao));
         }
 
