@@ -1,11 +1,13 @@
 package br.edu.cads.hohostapp.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.EnumType;
 
 @Entity
 public class Reserva {
@@ -14,6 +16,8 @@ public class Reserva {
     private String dataEntrada;
     private String dataSaida;
     private String formaPagamento;
+
+    @Enumerated(EnumType.STRING)
     private StatusReserva status;
     public enum StatusReserva {
         PENDENTE (1),        // Reserva criada, aguardando confirmação
@@ -25,12 +29,25 @@ public class Reserva {
         NAO_APARECEU (7),    
         CONCLUIDA (8);
 
-        private int status;
+        private final int codigo;
 
-        StatusReserva(int status) {
-            this.status = status;
-        }   
-        
+        StatusReserva(int codigo) {
+            this.codigo = codigo;
+        }
+
+        public int getCodigo() {
+            return codigo;
+        }
+
+        public static StatusReserva buscarCodigo(int codigo) {
+            for (StatusReserva status : values()) {
+                if (status.codigo == codigo) {
+                    return status;
+                }
+            }
+            throw new IllegalArgumentException("Código inválido: " + codigo);
+        }
+
     }
     
 
@@ -104,5 +121,20 @@ public class Reserva {
     public void setStatus(StatusReserva status) {
             this.status = status;
         }
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Reserva reserva = (Reserva) o;
+        return id != null && id.equals(reserva.id);
+    }
+
+    @Override
+        public String toString() {
+        return "Reserva:\nId= " + id + "\nCliente= " + cliente.getNome() + "Contato do cliente= " + cliente.getTelefone() +
+        "\nAnfitrião responsável= " + anfitriao.getNome() + "\nContato do anfitrião= " + anfitriao.getTelefone() +
+        "\nAcomodação= " + acomodacao.getTitulo() + "\nData de entrada= " + dataEntrada + "\nData de saída= " + dataSaida +
+        "\nForma de pagamento= " + formaPagamento + "\nStatus da Reserva= " + status + "}";
+    }
 }

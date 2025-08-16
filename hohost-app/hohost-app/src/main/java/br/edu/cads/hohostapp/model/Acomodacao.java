@@ -173,4 +173,21 @@ public class Acomodacao {
        this.reserva = reserva;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Acomodacao acomodacao = (Acomodacao) o;
+        return id != null && id.equals(acomodacao.id);
+    }
+
+    @Override
+        public String toString() {
+        return "Acomodação: \nId= " + id + "\nTitulo= " + titulo + "\nAnfitrião responsável= " + anfitriao.getNome() + "\nDescrição= " + descricao + 
+        "\nEndereço= " + endereco + ", " + cidade + ", " + estado +
+        "\nTipo de acomodação= " + tipo + "\nPreco por noite= " + precoPorNoite + 
+        "\nQuantidade de quartos= " + quantidadeQuartos + " | Quantidade de banheiros " + quantidadeBanheiros + ", | Capacidade " + capacidade +
+        "\nWifi= " + wifi + " | Estacionamento= " + estacionamento + " | Permitidos animais= " + animaisPermitidos +
+        "\nWifi= " + disponivel + "}";
+    }
 }

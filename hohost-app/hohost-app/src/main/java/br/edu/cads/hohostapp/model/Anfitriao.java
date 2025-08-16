@@ -83,4 +83,18 @@ public class Anfitriao {
         this.reservas = reservas;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Anfitriao anfitriao = (Anfitriao) o;
+        return id != null && id.equals(anfitriao.id);
+    }
+
+    @Override
+        public String toString() {
+        return "Cliente:\nId= " + id + "\nNome= " + nome + "\nTelefone= " + telefone + 
+        "\nEmail= " + email + "\nEstado= " + estado + "\nCidade de atuação= " + cidadeAtuacao +
+        "\n-- Lista de Acomodações --" + acomodacoes.toString() + "\n-- Lista de reservas --" + reservas.toString() + "}";
+    }
 }

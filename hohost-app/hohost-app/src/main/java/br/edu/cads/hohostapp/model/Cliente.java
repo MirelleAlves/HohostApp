@@ -71,4 +71,17 @@ public class Cliente {
         this.reservas = reservas;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente cliente = (Cliente) o;
+        return id != null && id.equals(cliente.id);
+    }
+
+    @Override
+        public String toString() {
+        return "Cliente:\nId= " + id + "\nNome= " + nome + "\nTelefone= " + telefone + 
+        "\nEmail= " + email + "\nCPF= " + cpf + "\n-- Lista de reservas -- " + reservas.toString() + "}";
+    }
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import br.edu.cads.hohostapp.model.Anfitriao;
 import br.edu.cads.hohostapp.model.Cliente;
 import br.edu.cads.hohostapp.repository.ClienteRepository;
 
