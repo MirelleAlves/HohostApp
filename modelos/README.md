@@ -62,21 +62,28 @@ Processo é encerrado.
 
 O diagrama de classes representa a estrutura do sistema, mostrando as classes, seus atributos, métodos e os relacionamentos entre elas. Com base no código fornecido, temos:
 
+- Classe Acomodacao:
+
+> Atributos: id, titulo, descricao, endereco, cidade, estado, tipo, precoPorNoite, quantidadeQuartos, quantidadeBanheiros, capacidade, wifi, estacionamento, animaisPermitidos, disponivel, anfitriao, reserva
+> Métodos: getId(), setId(), getTitulo(), setTitulo(), getDescricao(), setDescricao(), getEndereco(), setEndereco(), getCidade(), setCidade(), getEstado(), setEstado(), getTipo(), setTipo(), getPrecoPorNoite(), setPrecoPorNoite(), getQuantidadeQuartos(), setQuantidadeQuartos(), getQuantidadeBanheiros(), setQuantidadeBanheiros(), getCapacidade(), setCapacidade(), getWifi(), setWifi(), getEstacionamento(), setEstacionamento(), getAnimaisPermitidos(), setAnimaisPermitidos(), getDisponivel(), setDisponivel(), getAnfitriao(), setAnfitriao(), getReserva(), setReserva(), equals(), toString()
+
+- Classe Anfitriao:
+> Atributos: id, nome, email, estado, cidadeAtuacao, acomodacoes reservas
+> Métodos: getId(), setId(), getNome(), setNome(), getEstado(), setEstado(),getCidadeAtuacao(), setCidadeAtuacao(), getAcomodacoes(), getReservas(), equals(), toString()
+
+- Classe Cliente:
+> Atributos: id, nome, email, cpf, reservas
+> Métodos: getId(), setId(), getNome(), setNome(), getEmail(), setEmail(), getCpf(), setCpf(), getReservas(), equals(), toString()
+
 - Classe Reserva:
 > Atributos: id, dataEntrada, dataSaida, formaPagamento, status, cliente, acomodacao, anfitriao
 > Métodos: getId(), setId(), getDataEntrada(), setDataEntrada(), getDataSaida(), setDataSaida(), getFormaPagamento(), setFormaPagamento(), getStatus(), setStatus(), getCliente(), setCliente(), getAcomodacao(), setAcomodacao(), getAnfitriao(), setAnfitriao()
 
-- Classe Cliente:
-> Atributos: id, nome, email, senha
-> Métodos: getId(), setId(), getNome(), setNome(), getEmail(), setEmail(), getSenha(), setSenha()
+ReservaInput:
 
-- Classe Acomodacao:
-> Atributos: id, descricao, preco, tipo, disponibilidade
-> Métodos: getId(), setId(), getDescricao(), setDescricao(), getPreco(), setPreco(), getTipo(), setTipo(), getDisponibilidade(), setDisponibilidade()
-
-- Classe Anfitriao:
-> Atributos: id, nome, email, senha
-> Métodos: getId(), setId(), getNome(), setNome(), getEmail(), setEmail(), getSenha(), setSenha()
+> Atributos: idCliente, idAcomodacao, dataEntrada, dataSaida, formaPagamento
+> Métodos: getIdCliente(), setIdCliente(), getIdAcomodacao(), setIdAcomodacao(), getDataEntrada(), setDataEntrada(), 
+getDataSaida(), setDataSaida(), getFormaPagamento(), setFormaPagamento()
 
 ## 🔹 Diagrama de Estados
 Diagrama de Estados

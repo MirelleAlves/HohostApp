@@ -1,7 +1,6 @@
 package br.edu.cads.hohostapp.model;
 
 import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -65,10 +64,6 @@ public class Cliente {
 
     public List<Reserva> getReservas() {
         return reservas;
-    }
-
-    public void setReservas(List<Reserva> reservas) {
-        this.reservas = reservas;
     }
 
     @Override

@@ -75,12 +75,12 @@ public class Anfitriao {
         this.cidadeAtuacao = cidadeAtuacao;
     }
 
-    public List<Reserva> getReservas() {
-        return reservas;
+    public List<Acomodacao> getAcomodacoes() {
+        return acomodacoes;
     }
 
-    public void setReservas(List<Reserva> reservas) {
-        this.reservas = reservas;
+    public List<Reserva> getReservas() {
+        return reservas;
     }
 
     @Override
