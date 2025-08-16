@@ -11,8 +11,8 @@ Atores:
 - Anfitrião
 - Administrador
 
-Casos de Uso:
-\nCliente:
+Casos de Uso:<br>
+Cliente:
 - Registrar-se
 - Buscar acomodações
 - Reservar acomodação
@@ -83,12 +83,12 @@ Diagrama de Estados
 
 O diagrama de estados descreve os estados pelos quais um objeto passa durante seu ciclo de vida.
 Para a Reserva, os estados podem ser:
-\n
-\nPendente: Reserva criada, aguardando confirmação.
-\nConfirmada: Reserva confirmada pelo anfitrião ou sistema.
-\nRejeitada: Anfitrião recusou a reserva.
-\nCancelada: Cliente ou anfitrião cancelou.
-\nCheck-in: Cliente realizou o check-in.
-\nCheck-out: Cliente finalizou a estadia.
-\nNão Apareceu: Cliente não compareceu.
-\nConcluída: Reserva finalizada com sucesso.
+
+Pendente: Reserva criada, aguardando confirmação.<br>
+Confirmada: Reserva confirmada pelo anfitrião ou sistema.<br>
+Rejeitada: Anfitrião recusou a reserva.<br>
+Cancelada: Cliente ou anfitrião cancelou.<br>
+Check-in: Cliente realizou o check-in.<br>
+Check-out: Cliente finalizou a estadia.<br>
+Não Apareceu: Cliente não compareceu.<br>
+Concluída: Reserva finalizada com sucesso.
