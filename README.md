@@ -22,5 +22,5 @@ O sistema será implementado com Java 21, Spring Boot 3, JPA e exposto via API R
 
 ## 👥 Integrantes
 - Carlos
-- Gilberto
+- Gilberto Vieira Barreto
 - Mirelle dos Santos Alves
