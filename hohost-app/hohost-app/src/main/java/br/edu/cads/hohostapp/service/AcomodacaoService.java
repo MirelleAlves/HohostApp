@@ -53,8 +53,7 @@ public class AcomodacaoService {
             acomodacao.setEstacionamento(atualizacaoAcomodacao.getEstacionamento());
             acomodacao.setAnimaisPermitidos(atualizacaoAcomodacao.getAnimaisPermitidos());
             acomodacao.setDisponivel(atualizacaoAcomodacao.getDisponivel());
-            acomodacao.setAnfitriao(atualizacaoAcomodacao.getAnfitriao());
-            acomodacao.setReserva(atualizacaoAcomodacao.getReserva());
+
 
             return Optional.of(repository.save(acomodacao));
         }

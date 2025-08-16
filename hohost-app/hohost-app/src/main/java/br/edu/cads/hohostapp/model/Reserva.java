@@ -14,6 +14,7 @@ public class Reserva {
     private String dataEntrada;
     private String dataSaida;
     private String formaPagamento;
+    private StatusReserva status;
     public enum StatusReserva {
         PENDENTE (1),        // Reserva criada, aguardando confirmação
         CONFIRMADA (2),      // Reserva confirmada pelo anfitrião ou sistema
@@ -24,15 +25,17 @@ public class Reserva {
         NAO_APARECEU (7),    
         CONCLUIDA (8);
 
-        public int status;
+        private int status;
 
         StatusReserva(int status) {
             this.status = status;
-        }        
+        }   
+        
     }
+    
 
     @ManyToOne
-    @JoinColumn(name = "clente_id")
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     @ManyToOne
@@ -93,5 +96,13 @@ public class Reserva {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    public StatusReserva getStatus() {
+            return status;
+        }
+
+    public void setStatus(StatusReserva status) {
+            this.status = status;
+        }
     
 }

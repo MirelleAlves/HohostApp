@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.cads.hohostapp.model.Reserva;
 import br.edu.cads.hohostapp.service.ReservaService;
+import br.edu.cads.hohostapp.model.ReservaInput;
 
 @RestController
 @RequestMapping("/api/reservas")
@@ -34,8 +35,14 @@ public class ReservaController {
     }
 
     @PostMapping
-    public Reserva criar(@RequestBody Reserva Reserva) {
-        return service.salvar(Reserva);
+    public Reserva reservar(@RequestBody ReservaInput request) {
+        return service.reservar(
+            request.getIdCliente(),
+            request.getIdAcomodacao(),
+            request.getDataEntrada(),
+            request.getDataSaida(),
+            request.getFormaPagamento()
+        );
     }
 
     @DeleteMapping("/{id}")
