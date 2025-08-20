@@ -39,9 +39,6 @@ Anfitriao --> UC_Confirmar
 @enduml
 ```
 
-### Diagrama de Casos de Uso
-
-
 ## 🔹 Diagramas de Atividades
 
 ### Registrar-se (Cliente / Anfitrião):
